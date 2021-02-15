@@ -9,7 +9,7 @@ import 'package:flutter_launcher_icons/xml_templates.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: 'Navigation Basics',
+    title: 'Meoka',
     home: FirstRoute(),
   ));
 }
