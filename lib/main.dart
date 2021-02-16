@@ -1,79 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/android.dart';
-import 'package:flutter_launcher_icons/constants.dart';
-import 'package:flutter_launcher_icons/custom_exceptions.dart';
-import 'package:flutter_launcher_icons/ios.dart';
-import 'package:flutter_launcher_icons/main.dart';
-import 'package:flutter_launcher_icons/utils.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Meoka',
-    home: FirstRoute(),
-  ));
-}
+import 'Widgets/auth.dart';
+import 'Widgets/first_route.dart';
+import 'Widgets/second_route.dart';
 
-class FirstRoute extends StatelessWidget {
+void main() => runApp(MeokaApp());
+
+class MeokaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            'Meoka',
-          style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.deepPurple, // background
-            // onPrimary: Colors.deepPurple, // foreground
-          ),
-          child: Text(
-            'How are you?',
-            style: TextStyle(fontSize: 24, fontFamily: "NotoSansJP"),
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondRoute()),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            "Meoka",
-          style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.deepPurple, // background
-            // onPrimary: Colors.deepPurple, // foreground
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text(
-            'Bye!',
-            style: TextStyle(fontSize: 24, fontFamily: "NotoSansJP"),
-
-          ),
-        ),
-      ),
+    return MaterialApp(
+      routes: {
+        '/': (context) => SignUpScreen(),
+        '/firstRoute': (context) => FirstRoute(),
+        '/secondRoute': (context) => SecondRoute(),
+      },
     );
   }
 }
