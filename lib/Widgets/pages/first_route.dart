@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../elements/app-bar/app_bar.dart';
 import 'second_route.dart';
 
 class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.indigoAccent,
-      appBar: AppBar(
-        title: Text(
-          'Meoka',
-          style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
-      body: Center(
-        child: ElevatedButton(
+        appBar: BaseAppBar(),
+        body: Center(
+            child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             primary: Colors.deepPurple, // background
             // onPrimary: Colors.deepPurple, // foreground
@@ -30,8 +24,6 @@ class FirstRoute extends StatelessWidget {
               MaterialPageRoute(builder: (context) => SecondRoute()),
             );
           },
-        ),
-      ),
-    );
+        )));
   }
 }

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../elements/app-bar/app_bar.dart';
+
 class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Meoka",
-          style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
+      appBar: BaseAppBar(),
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(

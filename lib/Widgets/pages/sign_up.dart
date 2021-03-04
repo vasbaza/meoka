@@ -1,28 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Meoka',
-          style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
-      // backgroundColor: Colors.grey[200],
-      body: Center(
-        child: SizedBox(
-          width: 400,
-          child: Card(
-            child: SignUpForm(),
-          ),
-        ),
-      ),
-    );
-  }
-}
+import '../elements/sign_up/form/fields.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -47,62 +25,10 @@ class _SignUpFormState extends State<SignUpForm> {
           Text(
             'Sign up',
             style: TextStyle(fontSize: 30, fontFamily: "NotoSansJP"),
-            // style: Theme
-            // .of(context)
-            // .textTheme
-            // .headline4
           ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextFormField(
-              cursorColor: Colors.black,
-              controller: _firstNameTextController,
-              decoration: InputDecoration(
-                hintText: 'First name',
-                hintStyle: TextStyle(fontSize: 17, fontFamily: "NotoSansJP"),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextFormField(
-              cursorColor: Colors.black,
-              controller: _lastNameTextController,
-              decoration: InputDecoration(
-                hintText: 'Last name',
-                hintStyle: TextStyle(fontSize: 17, fontFamily: "NotoSansJP"),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextFormField(
-              cursorColor: Colors.black,
-              controller: _usernameTextController,
-              decoration: InputDecoration(
-                hintText: 'Username',
-                hintStyle: TextStyle(fontSize: 17, fontFamily: "NotoSansJP"),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.deepPurple),
-                ),
-              ),
-            ),
-          ),
+          Field('First name', _firstNameTextController),
+          Field('Last name', _lastNameTextController),
+          Field('Username', _usernameTextController),
           TextButton(
             style: ButtonStyle(
               foregroundColor:

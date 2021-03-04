@@ -30,16 +30,38 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAtQZGrL1o2--AM2Krgq5sdFG3YD2X4qW4",
+        authDomain: "meoka-app.firebaseapp.com",
+        projectId: "meoka-app",
+        storageBucket: "meoka-app.appspot.com",
+        messagingSenderId: "904816186750",
+        appId: "1:904816186750:web:8fbe3489deaddac65e8f2f",
+        measurementId: "G-Z9G8SRS316"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<!--    if ('serviceWorker' in navigator) {-->
+<!--      window.addEventListener('flutter-first-frame', function () {-->
+<!--        navigator.serviceWorker.register('flutter_service_worker.js');-->
+<!--      });-->
+<!--    }-->
+<!--  </script>-->
+<script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
